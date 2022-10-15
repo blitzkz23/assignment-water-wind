@@ -91,9 +91,9 @@ func main() {
 func generateWaterStatus(status int) string {
 	waterStatus := ""
 	switch {
-	case status < 5:
+	case status <= 6:
 		waterStatus = "Aman"
-	case status > 6 && status < 9:
+	case status > 6 && status <= 9:
 		waterStatus = "Siaga"
 	case status > 9:
 		waterStatus = "Bahaya"
@@ -104,7 +104,7 @@ func generateWaterStatus(status int) string {
 func generateWindStatus(status int) string {
 	windStatus := ""
 	switch {
-	case status < 6:
+	case status <= 6:
 		windStatus = "Aman"
 	case status > 6 && status <= 15:
 		windStatus = "Siaga"

@@ -5,14 +5,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="refresh" content="5" />
-    <title>Document</title>
+    <title>Water & Wind Status Level Generator</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        background-color: white;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        top: 40%;
+        border-radius: 12px;
+        -ms-transform: translateY(40%);
+        transform: translateY(40%);
+        background-color: white;
+        box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+          6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+          12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+          22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+          41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+          100px 100px 80px rgba(0, 0, 0, 0.07);
+      }
+
+      .container h1 {
+        padding-top: 2rem;
+        text-align: center;
+      }
+
+      .cards-container {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .card {
+        text-align: center;
+        padding: 4rem 4rem;
+        margin: 4rem;
+        border-radius: 12px;
+        box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+          6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+          12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+          22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+          41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+          100px 100px 80px rgba(0, 0, 0, 0.07);
+      }
+
+      .status {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+    </style>
   </head>
   <body>
-    <div>
-      <h1>Status Water => {{.Status.Water}}</h1>
-      <h2>Condition => {{.Condition.Water}}</h2>
-      <h1>Status Wind => {{.Status.Wind}}</h1>
-      <h2>Condition => {{.Condition.Wind}}</h2>
+    <div class="container">
+      <h1 class="header">Water & Wind Statuses</h1>
+      <div class="cards-container">
+        <div class="card">
+          <h1>Water Status</h1>
+          <h1 class="status">{{.Status.Water}}</h1>
+          <h2>{{.Condition.Water}}</h2>
+        </div>
+        <div class="card">
+          <h1>Wind Status</h1>
+          <h1 class="status">{{.Status.Wind}}</h1>
+          <h2>{{.Condition.Wind}}</h2>
+        </div>
+      </div>
     </div>
   </body>
 </html>
